@@ -1,4 +1,10 @@
 <?php
+/*
+ * This file is part of the sfUtilitiesPlugin package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 pake_desc('Run a batch');
 pake_task('run', 'project_exists');

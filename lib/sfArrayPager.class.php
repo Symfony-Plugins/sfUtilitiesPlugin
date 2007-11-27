@@ -1,4 +1,11 @@
 <?php
+/*
+ * This file is part of the sfUtilitiesPlugin package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 class sfArrayPager extends sfPager
 {
   protected $resultsArray = array();
@@ -7,13 +14,10 @@ class sfArrayPager extends sfPager
   {
     $this->setNbResults(count($this->resultsArray));
  
-    if (($this->getPage() == 0 || $this->getMaxPerPage() == 0))
-    {
-     $this->setLastPage(0);
-    }
-    else
-    {
-     $this->setLastPage(ceil($this->getNbResults() / $this->getMaxPerPage()));
+    if (($this->getPage() == 0 || $this->getMaxPerPage() == 0)) {
+      $this->setLastPage(0);
+    } else {
+      $this->setLastPage(ceil($this->getNbResults() / $this->getMaxPerPage()));
     }
   }
 
@@ -35,9 +39,9 @@ class sfArrayPager extends sfPager
   public function getResults()
   {
     return array_slice(
-			$this->resultsArray, 
-			($this->getPage() - 1) * $this->getMaxPerPage(), 
-			$this->maxPerPage
-		);
+      $this->resultsArray, 
+      ($this->getPage() - 1) * $this->getMaxPerPage(), 
+      $this->maxPerPage
+    );
   }
 }
